@@ -1,0 +1,23 @@
+.button_type_edit-profile {
+  grid-area: edit;
+  width: 24px;
+  height: 24px;
+  -ms-grid-row-align: end;
+      align-self: end;
+  margin: 0;
+  background-image: url(../../../images/edit-button.svg);
+}
+
+@media screen and (max-width: 860px) {
+  .button_type_edit-profile {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .button_type_edit-profile {
+    width: 18px;
+    height: 18px;
+  }
+}

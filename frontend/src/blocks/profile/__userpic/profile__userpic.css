@@ -1,0 +1,18 @@
+.profile__userpic {
+  position: relative;
+  grid-area: userpic;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url(../../../images/user-blank.png);
+  background-size: cover;
+  color: #888;
+}
+
+@media screen and (max-width: 680px) {
+  .profile__userpic {
+    -ms-grid-column-align: center;
+      justify-self: center;
+  }
+}

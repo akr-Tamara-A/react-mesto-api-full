@@ -1,0 +1,16 @@
+@import url(./page_overflow.css);
+@import url(./__container/page__container.css);
+@import url(./__section/page__section.css);
+@import url(./__header/page__header.css);
+@import url(./__content/page__content.css);
+@import url(./__footer/page__footer.css);
+@import url(../link/link.css);
+
+#root {
+  background-color: #000000;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  min-height: 100vh;
+}

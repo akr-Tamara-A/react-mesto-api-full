@@ -1,0 +1,31 @@
+.link {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity .3s ease;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.link:hover {
+  opacity: .6;
+}
+
+.link:focus {
+  outline: 2px solid rgb(64, 154, 244);
+}
+
+.header__link {
+  font-size: 18px;
+  line-height: 22px;
+  background-color: transparent;
+  border: none;
+}
+
+.form__link {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.mail {
+  margin-right: 24px;
+}

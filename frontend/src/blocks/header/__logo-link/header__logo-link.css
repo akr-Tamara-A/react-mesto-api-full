@@ -1,0 +1,14 @@
+.header__logo-link {
+  text-decoration: none;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+.header__logo-link:hover {
+  opacity: .6;
+}
+
+.header__logo-link:focus {
+  outline: 2px solid rgb(64, 154, 244);
+}

@@ -1,0 +1,31 @@
+.popup__form {
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 36px;
+  margin: 0 35px;
+  width: 430px;
+}
+
+@media screen and (max-width: 530px) {
+  .popup__form {
+    padding: 24px;
+    margin: 0 30px;
+    width: calc(100vw - 2 * (30px + 15px));
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .popup__form {
+    padding: 18px;
+    margin: 0 25px;
+  }
+}

@@ -1,0 +1,31 @@
+.element__image {
+  -o-object-position: center bottom;
+    object-position: center bottom;
+  -o-object-fit: cover;
+    object-fit: cover;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.element__image:hover {
+  -webkit-transform: translate(-50%, -50%) scale(.8, .8);
+      -ms-transform: translate(-50%, -50%) scale(.8, .8);
+          transform: translate(-50%, -50%) scale(.8, .8);
+}
+
+.element__image:focus {
+  -webkit-transform: translate(-50%, -50%) scale(.8, .8);
+      -ms-transform: translate(-50%, -50%) scale(.8, .8);
+          transform: translate(-50%, -50%) scale(.8, .8);
+}

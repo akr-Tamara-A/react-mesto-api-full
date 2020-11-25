@@ -1,0 +1,9 @@
+.profile__add-post {
+  margin: 0;
+}
+
+@media screen and (max-width: 680px) {
+  .profile__add-post {
+    margin-top: 36px;
+  }
+}

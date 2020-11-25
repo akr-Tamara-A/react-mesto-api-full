@@ -1,0 +1,16 @@
+.profile__user {
+  grid-area: user;
+  -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 440px;
+  margin: 0 17px 0 30px;
+}
+
+@media screen and (max-width: 680px) {
+  .profile__user {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    margin: 0 8px 0 0;
+  }
+}

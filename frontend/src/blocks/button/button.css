@@ -1,0 +1,27 @@
+@import url(./_style/button_style_primary.css);
+@import url(./_style/button_style_secondary.css);
+@import url(./_type/button_type_edit-profile.css);
+@import url(./_type/button_type_add-photo.css);
+@import url(./_type/button_type_delete.css);
+@import url(./_type/button_type_no-like.css);
+@import url(./_type/button_type_like.css);
+
+.button {
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+.button:hover {
+  opacity: .6;
+}
+
+.button:focus {
+  outline: 2px solid rgb(64, 154, 244);
+}

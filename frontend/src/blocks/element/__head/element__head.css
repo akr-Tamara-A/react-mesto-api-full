@@ -1,0 +1,9 @@
+.element__head {
+  background: -webkit-gradient(linear, left top, left bottom, from(#323232), color-stop(40%, #3F3F3F), color-stop(150%, #1C1C1C)), -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.40)), color-stop(200%, rgba(0,0,0,0.25)));
+  background: -o-linear-gradient(top, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), -o-linear-gradient(bottom, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-blend-mode: multiply;
+  height: 282px;
+  overflow: hidden;
+  position: relative;
+}

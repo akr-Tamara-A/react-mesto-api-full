@@ -1,0 +1,24 @@
+.popup__view {
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 35px;
+}
+
+
+@media screen and (max-width: 530px) {
+  .popup__view {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .popup__view {
+    margin: 0 25px;
+  }
+}

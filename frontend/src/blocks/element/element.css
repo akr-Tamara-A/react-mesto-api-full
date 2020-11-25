@@ -1,0 +1,17 @@
+@import url(./__text/element__text.css);
+@import url(./__head/element__head.css);
+@import url(./__wrapper/element__wrapper.css);
+@import url(./__image/element__image.css);
+@import url(./__figcaption/element__figcaption.css);
+@import url(./__delete/element__delete.css);
+@import url(./__delete/element__delete_hidden.css);
+@import url(./__like/element__like.css);
+@import url(./__like-button/element__like-button.css);
+@import url(./__like-counter/element__like-counter.css);
+@import url(./__title/element__title.css);
+
+.element {
+  position: relative;
+  cursor: pointer;
+}
+
