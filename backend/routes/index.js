@@ -7,6 +7,13 @@ const cardsRouter = require('./cards');
 const auth = require('../middlewares/auth');
 const { userValidation } = require('../middlewares/validation');
 
+/** Краш-тест */
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 /** Обработка логина пользователя */
 router.post('/signin', userValidation, loginUser);
 
