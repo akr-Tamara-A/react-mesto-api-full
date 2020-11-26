@@ -33,7 +33,6 @@ app.use(routes);
 app.use(errorLogger);
 app.use(errors());
 app.use((err, req, res, next) => {
-  console.log(err);
   let { statusCode = 500, message } = err;
 
   if (err.errors && err.errors.email.properties.type === 'unique') {
