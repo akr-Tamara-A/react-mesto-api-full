@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const path = require('path');
+const cors = require('cors');
 const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 require('dotenv').config();
@@ -15,8 +15,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cors());
+
 /** подключаемся к серверу mongo */
-mongoose.connect('mongodb://localhost:27017/mestodb2', {
+mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
@@ -24,9 +26,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb2', {
 });
 
 /** Обработка запросов */
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(requestLogger);
-// app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 /** Обработка ошибок */

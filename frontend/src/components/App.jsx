@@ -30,7 +30,7 @@ function App() {
       auth
         .checkToken(jwt)
         .then((res) => {
-          setUserData(res.data);
+          setUserData(res);
           setLoggedIn(true);
           history.push("/mesto");
         })

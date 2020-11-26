@@ -50,7 +50,7 @@ function MainPage(props) {
       api
       .getInitialCards()
       .then((data) => {
-        setCards(data);
+        setCards(data.reverse());
         console.log(`cards info loaded`);
       })
     })
@@ -110,7 +110,6 @@ function MainPage(props) {
         return card._id !== currentCard._id
       });
       setCards(newCards);
-      console.log('card deleted');
       closeAllPopups();
     })
     .catch((err) => {
@@ -147,7 +146,6 @@ function MainPage(props) {
       console.log("Ошибка. Не удалось установить новые данные: ", err);
     })
     .finally(() => {
-      console.log(`user info updates`);
       setSubmitButtonValues({
         ...submitButtonValues, 
         editProfile: 'Сохранить',
@@ -170,7 +168,6 @@ function MainPage(props) {
       console.log("Ошибка. Не удалось установить новые данные: ", err);
     })
     .finally(() => {
-      console.log(`user avatar updated`);
       setSubmitButtonValues({
         ...submitButtonValues, 
         editAvatar: 'Сохранить',
@@ -194,7 +191,6 @@ function MainPage(props) {
         console.log("Ошибка. Не удалось установить новые данные: ", err);
       })
       .finally(() => {
-        console.log(`new card added`);
         setSubmitButtonValues({
           ...submitButtonValues,
           addPlace: "Сохранить",

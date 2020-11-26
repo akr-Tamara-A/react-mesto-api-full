@@ -27,7 +27,7 @@ function Register(props) {
     auth
       .register(registerData.email, registerData.password)
       .then((res) => {
-        if(res.data) {
+        if(res) {
           props.onRegister(true);
           history.push("/signin");
         } else {

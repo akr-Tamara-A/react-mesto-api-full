@@ -21,7 +21,6 @@ module.exports.getUsers = async (req, res, next) => {
 
 /** Контролер запроса пользователя */
 module.exports.getUser = async (req, res, next) => {
-  // console.log(req.user._id);
   try {
     const user = await User.findById(req.user._id);
     if (!user) {
@@ -77,7 +76,6 @@ module.exports.loginUser = async (req, res, next) => {
       }
     }
   } catch (err) {
-    // console.log(err);
     next(err);
   }
 };

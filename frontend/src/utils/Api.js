@@ -1,3 +1,5 @@
+import { BASE_URL } from "./Auth";
+
 export default class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
@@ -6,7 +8,7 @@ export default class Api {
 
   /** получить список всех карточек в виде массива (GET) */
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, { headers: this.headers })
+    return fetch(`${this._baseUrl}/cards`, { headers: this.getHeaders() })
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -17,7 +19,7 @@ export default class Api {
 
   /** получить данные пользователя (GET) */
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, { headers: this.headers })
+    return fetch(`${this._baseUrl}/users/me`, { headers: this.getHeaders() })
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -30,7 +32,7 @@ export default class Api {
   patchUserInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      headers: this.headers,
+      headers: this.getHeaders(),
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -47,7 +49,7 @@ export default class Api {
   patchUserAvatar(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: this.headers,
+      headers: this.getHeaders(),
       body: JSON.stringify({
         avatar: avatar,
       }),
@@ -63,7 +65,7 @@ export default class Api {
   postNewCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
-      headers: this.headers,
+      headers: this.getHeaders(),
       body: JSON.stringify({
         name: name,
         link: link,
@@ -82,7 +84,7 @@ export default class Api {
     
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: method,
-      headers: this.headers,
+      headers: this.getHeaders(),
     }).then((res) => {
       if (res.ok) {
         return res.json();
@@ -95,7 +97,7 @@ export default class Api {
   likeCard(cardID) {
     return fetch(`${this._baseUrl}/cards/likes/${cardID}`, {
       method: "PUT",
-      headers: this.headers,
+      headers: this.getHeaders(),
     }).then((res) => {
       if (res.ok) {
         return res.json();
@@ -108,7 +110,7 @@ export default class Api {
   unlikeCard(cardID) {
     return fetch(`${this._baseUrl}/cards/likes/${cardID}`, {
       method: "DELETE",
-      headers: this.headers,
+      headers: this.getHeaders(),
     }).then((res) => {
       if (res.ok) {
         return res.json();
@@ -121,7 +123,7 @@ export default class Api {
   deleteCard(cardID) {
     return fetch(`${this._baseUrl}/cards/${cardID}`, {
       method: "DELETE",
-      headers: this.headers,
+      headers: this.getHeaders(),
     }).then((res) => {
       if (res.ok) {
         return res.json();
@@ -129,14 +131,27 @@ export default class Api {
       return Promise.reject(`${res.status} ${res.statusText}`);
     });
   }
+
+  getHeaders () {
+    const token = getToken();
+
+    return {
+      ...this.headers,
+      'Authorization': `Bearer ${token}`,
+    }
+  }
 }
 
 /** Связь с сервером */
 export const api = new Api({
-  baseUrl: "http://localhost:3000",
+  baseUrl: BASE_URL,
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-  },
+  }
 });
+
+
+const getToken = () => {
+  return localStorage.getItem('jwt');
+}
