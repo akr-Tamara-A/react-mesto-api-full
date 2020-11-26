@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const isURL = require('validator/lib/isURL');
 
 const cardSchema = new Schema({
   name: {
@@ -9,8 +10,11 @@ const cardSchema = new Schema({
   },
   link: {
     type: String,
-    match: [/^https?:\/\/\w+#?/gi, 'Неправильная ссылка'],
     required: [true, 'Обязательное поле'],
+    validate: {
+      validator: (value) => isURL(value),
+      message: (props) => `${props.value} невалидный!`,
+    },
   },
   createdAt: {
     type: Date,
