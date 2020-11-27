@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.akr.students.nomoreparties.space';
+export const BASE_URL = 'https://api.akr.students.nomoreparties.space';
 
 /** Запрос регистрации пользователя */
 export const register = (email, password) => {
