@@ -66,7 +66,7 @@ module.exports.loginUser = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     if (!isEmail(email)) {
-      throw new BadRequestError('Невалидные данные');
+      throw new UnauthorizedError('Передан не верный логин или пароль');
     } else {
       const user = await User.findUserByCredentials(email, password);
       if (!user) {
