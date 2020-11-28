@@ -86,7 +86,10 @@ module.exports.patchUser = async (req, res, next) => {
     const user = await User.findByIdAndUpdate(
       { _id: req.user._id },
       req.body,
-      { new: true },
+      {
+        new: true,
+        runValidators: true,
+      },
     );
 
     if (!user) {
@@ -105,7 +108,10 @@ module.exports.patchUserAvatar = async (req, res, next) => {
     const user = await User.findByIdAndUpdate(
       { _id: req.user._id },
       req.body,
-      { new: true },
+      {
+        new: true,
+        runValidators: true,
+      },
     );
 
     if (!user) {
