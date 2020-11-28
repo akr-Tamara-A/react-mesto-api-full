@@ -27,11 +27,11 @@ function Register(props) {
     auth
       .register(registerData.email, registerData.password)
       .then((res) => {
-        if(res) {
+        if(res.message) {
+          return Promise.reject(res);
+        } else {
           props.onRegister(true);
           history.push("/signin");
-        } else {
-          return Promise.reject(res);
         }
       })
       .catch((err) => {
