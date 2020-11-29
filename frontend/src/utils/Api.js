@@ -78,38 +78,12 @@ export default class Api {
     });
   }
 
-  /** */
+  /** добавить/удалить лайк */
   changeLikeCardStatus(cardId, isLiked) {
     const method = isLiked ? "PUT" : "DELETE";
     
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: method,
-      headers: this.getHeaders(),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`${res.status} ${res.statusText}`);
-    });
-  }
-
-  /** "залайкать" карточку (PUT) */
-  likeCard(cardID) {
-    return fetch(`${this._baseUrl}/cards/${cardID}/likes`, {
-      method: "PUT",
-      headers: this.getHeaders(),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`${res.status} ${res.statusText}`);
-    });
-  }
-
-  /** удалить лайк карточки (DELETE) */
-  unlikeCard(cardID) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardID}`, {
-      method: "DELETE",
       headers: this.getHeaders(),
     }).then((res) => {
       if (res.ok) {
