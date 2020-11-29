@@ -54,7 +54,13 @@ module.exports.createUser = async (req, res, next) => {
       throw new BadRequestError('Невалидные данные');
     } else {
       await newUser.save();
-      res.send(newUser);
+      res.send({
+        name: newUser.name,
+        about: newUser.about,
+        avatar: newUser.avatar,
+        _id: newUser._id,
+        email: newUser.email,
+      });
     }
   } catch (err) {
     next(err);
