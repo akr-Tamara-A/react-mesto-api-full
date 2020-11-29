@@ -82,7 +82,7 @@ export default class Api {
   changeLikeCardStatus(cardId, isLiked) {
     const method = isLiked ? "PUT" : "DELETE";
     
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: method,
       headers: this.getHeaders(),
     }).then((res) => {
@@ -95,7 +95,7 @@ export default class Api {
 
   /** "залайкать" карточку (PUT) */
   likeCard(cardID) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardID}`, {
+    return fetch(`${this._baseUrl}/cards/${cardID}/likes`, {
       method: "PUT",
       headers: this.getHeaders(),
     }).then((res) => {

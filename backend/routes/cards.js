@@ -27,9 +27,9 @@ router.get('/cards/:cardId', cardIdValidation, getCard);
 router.delete('/cards/:cardId', cardIdValidation, deleteCard);
 
 /** Обработка добавления лайка карточке */
-router.put('/cards/likes/:cardId', cardIdValidation, addLike);
+router.put('/cards/:cardId/likes', cardIdValidation, addLike);
 
 /** Обработка удаления лайка карточке */
-router.delete('/cards/likes/:cardId', cardIdValidation, deleteLike);
+router.delete('/cards/:cardId/likes', cardIdValidation, deleteLike);
 
 module.exports = router;
